@@ -1,0 +1,55 @@
+// (o)(o)
+// The Gypsy hammer V.3 (Designed by ghostnipple, built by Professor Ruzli)
+// It requires mydicebot to run. My own preference is for the console version of mydicebot (https://mydicebot.com/).
+// This version updates the version number from 1 to 3, umm thats about it really.
+// This script will lose you money, they all do eventually. It might make you rich, but thats unlikely. 
+// Use for educational and entertainment purposes. 
+// Modify the variables below to match your seed conditions.
+// If you don’t know what that means best not use the script babe.  
+// But seriously, know when to quit, its the secret of successful gambling. 
+// The odds favour the house and in the long run the house will win.
+// Many thanks to Professor Ruzli for his time and his help in the production of this script.
+// (o)(o)
+
+baseBet = 0.00001;
+betHigh = false;
+nextBet = baseBet;
+
+var initBet = baseBet;
+var initPay =1.11;
+var betIncrease = 0;
+var payIncrease = 1.11;
+
+var currentBet = initBet;
+var currentPay = initPay;
+
+
+chance = getChance(49);
+
+
+function dobet() {
+    if (win) {
+        currentBet = baseBet;
+        currentPay = initPay;
+    } else {        
+currentBet += betIncrease;
+        currentPay += payIncrease;
+        
+    }
+    nextBet = currentBet;
+    chance = getChance(currentPay);
+    console.log(`************************************************************************`);
+    console.log(`Target ${currentPay}x | Outcome ${round(100 / currentroll, 2)}x`);
+    console.log(`************************************************************************`);
+}
+
+function getChance(multiplier){
+    return 99 / multiplier;
+}
+
+function round(number, decimals){
+    var dec = decimals - 1;
+    var dec2 = 10 / (10 * dec);
+    var output = number - ((number * 100) % dec2) / 100;
+    return output;
+}
