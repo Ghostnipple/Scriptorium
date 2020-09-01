@@ -1,0 +1,61 @@
+var config = {
+};
+// Leave the above line as it is.
+
+var betList = [10,15,30,10]; // Bet amounts go here. You can add more by adding them with a comma ( no need to use comma for last one).
+
+var cashoutList = [1.01, 1.02,  9.8, 10]; // Targets go here. Be sure each cashout has corresponding bet and vice-versa
+
+// not advisable to alter below this line, because you may fuck it up
+var index = 0;
+var cashout = cashoutList[index];
+var bet = betList[index];
+var play = true;
+ 
+log('Script is running');
+log('Welcome ' + userInfo.uname );
+  
+
+// Main:
+engine.on("GAME_STARTING", function() {
+	
+	if(play){
+		engine.bet(bet * 100, cashout);
+		log('Bet of ' + bet + ' bits was placed');
+	}
+	else{
+		log('script stopped');
+	}
+   
+});
+
+engine.on("GAME_ENDED", function() {
+
+    var lastGame = engine.history.first();
+  
+    if (!lastGame.wager) {
+        return;
+    }
+	
+    if(!lastGame.cashedAt) {
+		log('Last Game was Lost');
+		index++;
+		cashout = cashoutList[index];
+		bet = betList[index];
+        if(index > betList.length){
+			log('Script will Stop Now - No more further bet defined');
+			play = false;
+		}			
+        }
+    else{
+		log('Last Game was a Winner');
+		index = 0;
+		cashout = cashoutList[index];
+		bet = betList[index];
+       
+      
+      }
+	
+ 
+    
+});
