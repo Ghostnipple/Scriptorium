@@ -1,2 +1,2 @@
 # Scriptorium
-Experimental Script for Bustadice Degen. Like all scripts it will fail eventually, maybe soon maybe later. Random has an annoying habit of finding and exploiting weakpoints in all scripts.
+Experimental Script for Bustabit and Bustadice Degen. All scripts fail eventually, maybe sooner maybe later. Deciding whether to stop or keep playing is the real gamble you take with any casino.
