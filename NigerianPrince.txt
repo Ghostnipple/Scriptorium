@@ -22,9 +22,13 @@ var config = {
 
 // 👻 Nigerian Prince v1
 // an experiment from the Ghostnipple Laboratory
-// if this script should escape the laboratory, under no circumstances should you run it, as it will empty your bank roll faster than a Nigerian Prince.
-
-
+// Experience level: advanced
+// Theme Music: Get Lucky, Daftpunk
+// This script was designed to augment manual play. 
+// When I run this script I stop it frequently to align the settings with the seed conditions in my game.
+// If you don't know what that means or how to do that, then best not run this script.
+// Do not leave this script running unattended (nor any script for that matter). 
+// If you do decide to run it then bet small (1bit) it will give you more options when the script gets into trouble.
 
 var baseBet        = config.baseBet.value   	                                                                                         
 var baseTarget     = config.baseTarget.value                                                                                                 
