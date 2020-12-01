@@ -1,12 +1,13 @@
 var config = {
 };
-// Leave the above line as it is.
+// This script is for bustabit. The script will cycle through the bets specified (betList) and the targets specified (cashoutList) until a win
+then it returns to the first bet and the process repeats. The script will stop when it reaches the last bet.//
 
-var betList = [10,15,30,10]; // Bet amounts go here. You can add more by adding them with a comma ( no need to use comma for last one).
+var betList =     [1,    1,     1,    1   ]; // Bet amounts go here, add as many as you like. Just put a comma after each one ( no need to use comma for last one).
 
-var cashoutList = [1.01, 1.02,  9.8, 10]; // Targets go here. Be sure each cashout has corresponding bet and vice-versa
+var cashoutList = [1.01, 1.01,  1.01, 1.01]; // Targets go here. Be sure each target in the cashout list has a corresponding bet in the betList and vice-versa.
 
-// not advisable to alter below this line, because you may fuck it up
+// not advisable to alter below this line, unless you understand Javascript.
 var index = 0;
 var cashout = cashoutList[index];
 var bet = betList[index];
